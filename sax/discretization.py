@@ -1,10 +1,9 @@
 
-from scipy.stats import norm
 import pandas as pd
 import numpy as np
 
 
-def discretization_step(df_PAA, a):
+def discretization_step(df_PAA, alphabet, breakpoints):
     """
     Symbolic representation of df_PAA.
 
@@ -12,10 +11,6 @@ def discretization_step(df_PAA, a):
     - df_PAA = PAA of a pandas dataframe
     - a = alphabet size.
     """
-
-    # Define alphabet from alphabet size and corresponding breakpoints
-    alphabet = np.array([chr(i) for i in range(97, 97 + a)])
-    breakpoints = norm.ppf(np.linspace(0, 1, a+1)[1:-1])
 
     # Initialize data structure
     data = {col: [] for col in df_PAA.columns}
@@ -35,4 +30,4 @@ def discretization_step(df_PAA, a):
         # Store this column's results
         data[col] = discretization
 
-    return pd.DataFrame(data=data, index=df_PAA.index), breakpoints, alphabet
+    return pd.DataFrame(data=data, index=df_PAA.index)

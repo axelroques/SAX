@@ -30,16 +30,16 @@ sax.process()
 
 The sax object now contains results from the different steps of the algorithm:
 
-- sax.df_INT returns the dataframe after the normalization step.
-- sax.df_PAA returns the dataframe after the PAA step.
-- sax.df_SAX returns the dataframe after the discretization step.
+- `sax.df_INT` returns the dataframe after the normalization step.
+- `sax.df_PAA` returns the dataframe after the PAA step.
+- `sax.df_SAX` returns the dataframe after the discretization step.
 
 It also contains the various SAX parameters:
 
-- sax.w returns the number of segments in the PAA - and SAX - representation (after the dimensionality reduction).
-- sax.a returns the number of symbols in the alphabet.
-- sax.alphabet returns the different symbols in the alphabet (determined by parameter _a_).
-- sax.breakpoints returns the values of the different breakpoints computed to discretize the time series.
+- `sax.w `returns the number of segments in the PAA - and SAX - representation (after the dimensionality reduction).
+- `sax.a` returns the number of symbols in the alphabet.
+- `sax.alphabet` returns the different symbols in the alphabet (determined by parameter _a_).
+- `sax.breakpoints` returns the values of the different breakpoints computed to discretize the time series.
 
 Plotting the results:
 
