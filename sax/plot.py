@@ -178,7 +178,13 @@ def plot_SAX(object):
     ax.set_title(
         f'SAX Representation - w = {object.w}, a = {object.a}\nColumn {object.df_SAX.columns[object.i_plot]}')
     plt.xticks(rotation='vertical')
-    plt.yticks(range(len(alphabet)), alphabet)
+
+    if object.alphabet_type == 'letters':
+        plt.yticks(range(len(alphabet)), alphabet)
+    else:
+        plt.yticks(np.arange(np.min(alphabet),
+                             np.max(alphabet)+1),
+                   alphabet)
     plt.grid()
 
     plt.show()
@@ -226,8 +232,15 @@ def plot_SAX_subsequences(object):
         ax.set_title(
             f'SAX Representation - w = {object.w}, a = {object.a}\nColumn {df_SAX.columns[object.i_plot]} - Subsequence {i}')
         ax.tick_params(axis="x", rotation=90)
-        ax.set_yticks(range(len(alphabet)))
-        ax.set_yticklabels(alphabet)
+
+        if object.alphabet_type == 'letters':
+            ax.set_yticks(range(len(alphabet)))
+            ax.set_yticklabels(alphabet)
+        else:
+            ax.set_yticks(np.arange(np.min(alphabet),
+                                    np.max(alphabet)+1))
+            ax.set_yticklabels(alphabet)
+
         ax.grid()
 
     plt.tight_layout()

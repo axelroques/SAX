@@ -30,7 +30,7 @@ class SAX:
         if alphabet_type == 'letters':
             self.alphabet = np.array([chr(i) for i in range(97, 97 + a)])
         elif alphabet_type == 'numbers':
-            self.alphabet = np.arange(a)
+            self.alphabet = np.arange(1, a+1)
         else:
             raise RuntimeError(
                 "Unexpected alphabet type. Expected 'letters' or 'numbers"
@@ -95,7 +95,7 @@ class SAX_subsequences:
         if alphabet_type == 'letters':
             self.alphabet = np.array([chr(i) for i in range(97, 97 + a)])
         elif alphabet_type == 'numbers':
-            self.alphabet = np.arange(a)
+            self.alphabet = np.arange(1, a+1)
         else:
             raise RuntimeError(
                 "Unexpected alphabet type. Expected 'letters' or 'numbers"
